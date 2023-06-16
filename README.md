@@ -13,13 +13,21 @@ git submodule update --init --recursive
 ```
 
 Check that you have Docker properly installed and running. List existing Docker
-images and make sure you don't have images tagged as `afl`, `klee`, or `symcc`.
+images and make sure you don't have images tagged as
+`gcov`, `afl`, `klee`, or `symcc`.
 
 ```bash
 docker image ls
 ```
 
 ## Build dependencies
+
+### GCOV
+
+```bash
+cd deps/gcov
+docker build -t gcov .
+```
 
 ### AFL++
 
