@@ -9,12 +9,18 @@ fi
 # configuration
 PKG=$(readlink -f $1)
 WKS=output-gcov
+CMD=$(cat <<END
+    rm -rf ${WKS} && mkdir ${WKS} &&
+    gcc -fprofile-arcs -ftest-coverage -g main.c -o ${WKS}/main &&
+    for t in `ls -1 ${PKG}/input`; do ${WKS}/main < "input/$t"; done &&
+    gcov -o ${WKS} -n main.c
+END
+)
 
 # entrypoint
-cd ${PKG}
-rm -rf ${WKS} && mkdir ${WKS}
-gcc -fprofile-arcs -ftest-coverage -g main.c -o ${WKS}/main
-for test in input/*; do
-    ${WKS}/main < ${test}
-done
-gcov -o ${WKS} -n main.c
+docker run \
+    --tty --interactive \
+    --volume ${PKG}:/test \
+    --workdir /test \
+    --rm gcov \
+    bash -c "${CMD}"
