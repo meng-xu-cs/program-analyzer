@@ -106,3 +106,8 @@ cd demo/cs489
 cd demo/cs489
 ./run-symcc.sh <path-to-package>
 ```
+
+Sometimes SymCC will run into issues and does not respond to signals like
+interrupt (`Ctrl + C`) and the terminal freezes. When this happens, you can find
+the process via `docker ps`, locate the container id, and kill the container via
+`docker kill <container-id>`.
