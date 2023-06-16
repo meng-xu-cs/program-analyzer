@@ -1,0 +1,13 @@
+diff --git a/Dockerfile b/Dockerfile
+index 1d695ac..a83f6d6 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -99,7 +99,7 @@ RUN cmake -G Ninja \
+         -DZ3_TRUST_SYSTEM_VERSION=on \
+         /symcc_source \
+     && ninja check \
+-    && cargo install --path /symcc_source/util/symcc_fuzzing_helper
++    && cargo install -Z sparse-registry --path /symcc_source/util/symcc_fuzzing_helper
+ 
+ 
+ #

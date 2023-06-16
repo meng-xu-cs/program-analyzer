@@ -67,3 +67,12 @@ docker run --platform linux/amd64 --name symcc-next \
 docker commit symcc-next symcc
 docker rm symcc-next
 ```
+
+If Docker fails to build due to Cargo index taking too long to update, try to
+apply the `symcc-cargo-sparse-registry.patch` in the `deps/patch` directory
+to the `symcc` repository:
+
+```bash
+cd deps/symcc
+git apply ../patch/symcc-cargo-sparse-registry.patch
+```
