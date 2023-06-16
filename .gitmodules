@@ -1,0 +1,9 @@
+[submodule "deps/AFLplusplus"]
+	path = deps/AFLplusplus
+	url = https://github.com/AFLplusplus/AFLplusplus.git
+[submodule "deps/klee"]
+	path = deps/klee
+	url = https://github.com/klee/klee.git
+[submodule "deps/symcc"]
+	path = deps/symcc
+	url = https://github.com/eurecom-s3/symcc.git
