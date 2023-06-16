@@ -76,3 +76,33 @@ to the `symcc` repository:
 cd deps/symcc
 git apply ../patch/symcc-cargo-sparse-registry.patch
 ```
+
+## Helper scripts
+
+### Run GCOV
+
+```bash
+cd demo/cs489
+./run-gcov.sh <path-to-package>
+```
+
+### Run AFL++
+
+```bash
+cd demo/cs489
+./run-afl.sh <path-to-package>
+```
+
+### Run KLEE
+
+```bash
+cd demo/cs489
+./run-klee.sh <path-to-package>
+```
+
+### Run SymCC
+
+```bash
+cd demo/cs489
+./run-symcc.sh <path-to-package>
+```
