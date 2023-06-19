@@ -12,7 +12,7 @@ WKS=output-gcov
 CMD=$(cat <<END
     rm -rf ${WKS} && mkdir ${WKS} &&
     gcc -fprofile-arcs -ftest-coverage -g main.c -o ${WKS}/main &&
-    for t in `ls -1 ${PKG}/input`; do ${WKS}/main < "input/$t"; done &&
+    for t in input/*; do ${WKS}/main < "\$t"; done &&
     gcov -o ${WKS} -n main.c
 END
 )
