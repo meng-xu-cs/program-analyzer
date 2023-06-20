@@ -24,7 +24,7 @@ docker run \
     --platform linux/amd64 \
     --tty --interactive \
     --ulimit='stack=-1:-1' \
-    --volume ${PKG}:/test \
+    --volume "${PKG}:/test" \
     --workdir /test \
     --rm klee \
     bash -c "${CMD}"

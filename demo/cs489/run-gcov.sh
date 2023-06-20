@@ -20,7 +20,7 @@ END
 # entrypoint
 docker run \
     --tty --interactive \
-    --volume ${PKG}:/test \
+    --volume "${PKG}:/test" \
     --workdir /test \
     --rm gcov \
     bash -c "${CMD}"

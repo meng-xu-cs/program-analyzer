@@ -19,7 +19,7 @@ END
 # entrypoint
 docker run \
     --tty --interactive \
-    --volume ${PKG}:/test \
+    --volume "${PKG}:/test" \
     --workdir /test \
     --rm afl \
     bash -c "${CMD}"

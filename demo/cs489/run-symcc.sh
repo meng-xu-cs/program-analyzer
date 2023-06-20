@@ -24,7 +24,7 @@ END
 docker run \
     --platform linux/amd64 \
     --tty --interactive \
-    --volume ${PKG}:/test \
+    --volume "${PKG}:/test" \
     --workdir /test \
     --rm symcc \
     bash -c "${CMD}"
